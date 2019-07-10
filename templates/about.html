@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>About</h1>
+    <p>This is a Template</p>
+
+
+    <p>
+    {{ my_text }}, {{ my_number }}, {{ my_list }}, {{ my_html|striptags|slugify }}
+    </p>
+{% for my_sub_item in my_list %}
+    <li>{{ forloop.counter }} - {{ my_sub_item }}</li>
+
+    {% if my_sub_item == 999 %}
+    <p>escolhido</p>
+    {% endif %}
+{% endfor %}
+{% if my_flag == True %}
+    <p>flag is true</p>
+    {% else %}
+    <p>flag is false</p>
+{% endif %}
+{% endblock content %}
